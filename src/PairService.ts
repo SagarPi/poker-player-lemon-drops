@@ -6,9 +6,9 @@ export class PairService {
         let betAmount = 0;
         const pairs: number = this.howManyPairs(cards);
         if(pairs > 1) {
-          betAmount = betAmount + 30;
-        } else if(pairs > 0) {
           betAmount = betAmount + 20;
+        } else if(pairs > 0) {
+          betAmount = betAmount + 10;
         }
         return betAmount;
     }

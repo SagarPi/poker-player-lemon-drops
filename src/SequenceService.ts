@@ -1,40 +1,9 @@
-import {Card, GameState} from "./types/GameState";
+import {Card} from "./types/GameState";
+import Utils from "./Utils";
 
-interface Suits {
-    spades: any[];
-    hearts: any[];
-    clubs: any[];
-    diamonds: any[];
-}
-
-const sort = (gameState: GameState) => {
-    const suits: Suits = {
-        "spades": [],
-        "hearts": [],
-        "clubs": [],
-        "diamonds": []
-    };
-
-    const player = gameState.players[gameState.in_action];
-    const holeCards = player?.hole_cards;
-
-    if (holeCards) {
-        holeCards.forEach((card) => {
-            suits[card.suit].push(card);
-        });
-    }
-
-    const communityCards = gameState?.community_cards;
-    if (communityCards) {
-        communityCards.forEach((card) => {
-            suits[card.suit].push(card);
-        });
-    }
-
-    console.log('LEMON_DROPS cards: ', suits);
-    return suits;
-}
-
-export const SequenceService = (cards: Card[]): number => {
-    return 1;
+export const SequenceService = (card: Card[]): number => {
+    const ranks = card.map(card => card.rank);
+    const doiHaveSequence = new Utils().isSequence(ranks);
+    console.log('doiHaveSequence', doiHaveSequence);
+    return doiHaveSequence ? 50 : 0;
 }

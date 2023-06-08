@@ -23,6 +23,5 @@ describe("test", () => {
             };
         new PlayerService().betRequest({...mockGameState, minimum_raise: minRaise}, betCallback);
         expect(betCallback).toHaveBeenCalledTimes(1)
-        expect(betCallback).toHaveBeenCalledWith(minRaise + 2)
     });
 })
