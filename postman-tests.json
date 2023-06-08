@@ -1,0 +1,50 @@
+{
+  "info": {
+    "_postman_id": "1720789f-7f8f-4e9c-8584-676f6a0eb589",
+    "name": "Lean Poker APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Home Route",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1337",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1337"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"action\": \"bet_request\",\n    \"game_state\": {\n        \"tournament_id\": \"6450b2f68271630002e9c5ba\",\n        \"game_id\": \"6481ecf93f5cea0002d7708f\",\n        \"round\": 10,\n        \"players\": [\n            {\n                \"name\": \"Vivacious Fish\",\n                \"stack\": 0,\n                \"status\": \"out\",\n                \"bet\": 0,\n                \"time_used\": 722508,\n                \"version\": \"Default Java folding player\",\n                \"id\": 0\n            },\n            {\n                \"name\": \"Threat Level Midnight\",\n                \"stack\": 3731,\n                \"status\": \"active\",\n                \"bet\": 103,\n                \"time_used\": 3809553,\n                \"version\": \"0.1\",\n                \"id\": 1\n            },\n            {\n                \"name\": \"Good Snake\",\n                \"stack\": 0,\n                \"status\": \"out\",\n                \"bet\": 0,\n                \"time_used\": 142946,\n                \"version\": \"0.1\",\n                \"id\": 2\n            },\n            {\n                \"name\": \"Thoughtful Gray Wolf\",\n                \"stack\": 0,\n                \"status\": \"out\",\n                \"bet\": 0,\n                \"time_used\": 142881,\n                \"version\": \"Default TypeScript folding player\",\n                \"id\": 3\n            },\n            {\n                \"name\": \"DoubleAces\",\n                \"stack\": 0,\n                \"status\": \"out\",\n                \"bet\": 0,\n                \"time_used\": 144385,\n                \"version\": \"Default TypeScript folding player\",\n                \"id\": 4\n            },\n            {\n                \"name\": \"Lemon Drops\",\n                \"stack\": 63,\n                \"status\": \"active\",\n                \"bet\": 103,\n                \"hole_cards\": [\n                    {\n                        \"rank\": \"5\",\n                        \"suit\": \"spades\"\n                    },\n                    {\n                        \"rank\": \"6\",\n                        \"suit\": \"spades\"\n                    }\n                ],\n                \"time_used\": 3509800,\n                \"version\": \"Default TypeScript folding player\",\n                \"id\": 5\n            }\n        ],\n        \"small_blind\": 3,\n        \"big_blind\": 6,\n        \"orbits\": 1,\n        \"dealer\": 1,\n        \"community_cards\": [\n            {\n                \"rank\": \"7\",\n                \"suit\": \"hearts\"\n            },\n            {\n                \"rank\": \"2\",\n                \"suit\": \"diamonds\"\n            },\n            {\n                \"rank\": \"4\",\n                \"suit\": \"clubs\"\n            }\n        ],\n        \"current_buy_in\": 103,\n        \"pot\": 206,\n        \"in_action\": 5,\n        \"minimum_raise\": 6,\n        \"bet_index\": 0\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:1337",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1337"
+        }
+      },
+      "response": []
+    }
+  ]
+}
