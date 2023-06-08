@@ -7,7 +7,7 @@ export class PlayerService {
     public betRequest(gameState: GameState,betCallback: (bet: number) => void): void {
         console.log("LEMON_DROPS: betRequest: ",{ gameState });
 
-        let raise = gameState.minimum_raise;
+        let raise = gameState.minimum_raise + 5;
         try {
             // Maps J, Q, K, A to 11, 12, 13, 14
             const cardValueMap: Record<string,number> = {
