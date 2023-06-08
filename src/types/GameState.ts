@@ -12,7 +12,7 @@ export interface GameState {
     big_blind: number
     orbits: number
     dealer: number
-    community_cards: Card[]
+    community_cards: HoleCard[]
     current_buy_in: number
     pot: number
     in_action: number
@@ -33,7 +33,7 @@ export interface Player {
 
 export interface HoleCard {
     rank: string
-    suit: string
+    suit: Suits
 }
 
 export interface Rank {
@@ -52,7 +52,7 @@ export interface Rank {
     "A": 14
 }
 
-enum Suit {
+export enum Suits {
     SPADES = "spades",
     HEARTS = "hearts",
     CLUBS = "clubs",
@@ -60,6 +60,6 @@ enum Suit {
 }
 
 export interface Card {
-    rank: Rank
-    suit: Suit
+    rank: number
+    suit: Suits
 }
