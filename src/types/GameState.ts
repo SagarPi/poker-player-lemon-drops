@@ -12,7 +12,7 @@ export interface GameState {
     big_blind: number
     orbits: number
     dealer: number
-    community_cards: CommunityCard[]
+    community_cards: Card[]
     current_buy_in: number
     pot: number
     in_action: number
@@ -59,7 +59,7 @@ enum Suit {
     DIAMONDS = "diamonds"
 }
 
-export interface CommunityCard {
+export interface Card {
     rank: Rank
     suit: Suit
 }
