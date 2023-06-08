@@ -1,4 +1,4 @@
-import {Card, GameState, Rank, Suits} from "./types/GameState";
+import {Card, GameState, Suits} from "./types/GameState";
 
 export class PlayerService {
     public betRequest(gameState: GameState, betCallback: (bet: number) => void): void {
@@ -39,7 +39,8 @@ export class PlayerService {
           });
       }
 
-      console.log('All Cards', allCardsInHand);
+      const sortedCards = allCardsInHand.sort((a, b) => a.rank - b.rank);
+      console.log('Sorted Cards', sortedCards);
 
       betCallback(gameState.minimum_raise);
     }
