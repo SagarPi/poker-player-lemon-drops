@@ -1,5 +1,6 @@
 import {Card, GameState, Suits} from "./types/GameState";
 import {HighCardService} from "./HighCardService";
+import PairService from "./PairService";
 
 export class PlayerService {
     public betRequest(gameState: GameState, betCallback: (bet: number) => void): void {
@@ -43,7 +44,8 @@ export class PlayerService {
       const sortedCards = allCardsInHand.sort((a, b) => a.rank - b.rank);
       console.log('Sorted Cards', sortedCards);
 
-      const raise = gameState.minimum_raise + HighCardService(sortedCards);
+      const raise = gameState.minimum_raise + HighCardService(sortedCards) +
+      new PairService().getPairBetAmount(sortedCards);
       betCallback(raise);
     }
 
