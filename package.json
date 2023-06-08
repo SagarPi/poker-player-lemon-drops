@@ -6,7 +6,8 @@
   "scripts": {
     "postinstall": "npm run build",
     "start": "node out/index.js",
-    "build": "./node_modules/.bin/typings i && ./node_modules/.bin/tsc -p ./"
+    "build": "./node_modules/.bin/typings i && ./node_modules/.bin/tsc -p ./",
+    "test": "jest"
   },
   "dependencies": {
     "body-parser": "*",
@@ -17,5 +18,9 @@
   "engines": {
     "node": "18.12.1",
     "npm": "9.1.1"
+  },
+  "devDependencies": {
+    "@types/jest": "29.5.2",
+    "ts-jest": "29.1.0"
   }
 }
