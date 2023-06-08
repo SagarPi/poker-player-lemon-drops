@@ -16,8 +16,9 @@ app.get('/', ({}, res) => res.send(200, 'OK'));
 
 app.post('/', (req, res) => {
     console.log("index request body: ", JSON.stringify(req.body));
+    const gameState = (typeof req.body.game_state === 'string' || req.body.game_state instanceof String ) ? JSON.parse(req.body.game_state) : req.body.game_state;
     if (req.body.action === 'bet_request') {
-        player.betRequest(JSON.parse(req.body.game_state), bet => res.status(200).send(bet.toString()));
+        player.betRequest(gameState, bet => res.status(200).send(bet.toString()));
     } else if (req.body.action === 'showdown') {
         player.showdown(JSON.parse(req.body.game_state));
         res.status(200).send('OK');

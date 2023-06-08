@@ -7,7 +7,8 @@
     "postinstall": "npm run build",
     "start": "node out/index.js",
     "build": "./node_modules/.bin/typings i && ./node_modules/.bin/tsc -p ./",
-    "test": "jest"
+    "test": "jest",
+    "dev": "npm run build && npm start"
   },
   "dependencies": {
     "body-parser": "*",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@babel/preset-env": "7.22.4",
     "@types/jest": "29.5.2",
+    "nodemon": "2.0.22",
     "ts-jest": "29.1.0"
   }
 }
