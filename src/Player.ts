@@ -1,5 +1,7 @@
+import {GameState} from "./types/GameState";
+
 export class Player {
-  public betRequest(gameState: any, betCallback: (bet: number) => void): void {
+  public betRequest(gameState: GameState, betCallback: (bet: number) => void): void {
     console.log("LEMON_DROPS: betRequest: ", {gameState});
     betCallback(0);
   }
