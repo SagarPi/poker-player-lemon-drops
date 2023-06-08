@@ -1,6 +1,5 @@
 import {Card} from "./types/GameState";
 
-export const HighCardService = (cards: Card[]): number => {
-
-    return 1;
+export const HighCardService = (sortedCards: Card[]): number => {
+    return sortedCards.pop().rank
 }
