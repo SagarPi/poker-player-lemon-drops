@@ -3,7 +3,7 @@ import {GameState} from "./types/GameState";
 export class Player {
   public betRequest(gameState: GameState, betCallback: (bet: number) => void): void {
     console.log("LEMON_DROPS: betRequest: ", {gameState});
-    betCallback(0);
+    betCallback(100);
   }
 
   public showdown(gameState: any): void {
