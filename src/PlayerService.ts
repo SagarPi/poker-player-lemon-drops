@@ -1,9 +1,10 @@
 import {Card, GameState, Suits} from "./types/GameState";
+import {HighCardService} from "./HighCardService";
 
 export class PlayerService {
     public betRequest(gameState: GameState, betCallback: (bet: number) => void): void {
         console.log("LEMON_DROPS: betRequest: ", {gameState});
-        
+
         // Maps J, Q, K, A to 11, 12, 13, 14
         const cardValueMap: Record<string, number> = {
           "2": 2,
@@ -42,7 +43,8 @@ export class PlayerService {
       const sortedCards = allCardsInHand.sort((a, b) => a.rank - b.rank);
       console.log('Sorted Cards', sortedCards);
 
-      betCallback(gameState.minimum_raise);
+      const raise = gameState.minimum_raise + HighCardService(sortedCards);
+      betCallback(raise);
     }
 
     public showdown(gameState: any): void {
