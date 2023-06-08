@@ -47,9 +47,11 @@ export class PlayerService {
             const sortedCards = allCardsInHand.sort((a,b) => a.rank - b.rank);
             console.log('Sorted Cards',sortedCards);
 
-            raise = HighCardService(sortedCards)
-                + new PairService().getPairBetAmount(sortedCards)
-                + SequenceService(sortedCards);
+            if(raise < 1000) {
+                raise = HighCardService(sortedCards)
+                    + new PairService().getPairBetAmount(sortedCards)
+                    + SequenceService(sortedCards);
+            }
 
         } catch (error) {
             console.log(error);
