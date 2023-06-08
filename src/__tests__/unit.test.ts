@@ -1,5 +1,5 @@
 import PlayerService from "../PlayerService";
-import {Card, GameState, Player} from "../types/GameState";
+import {Card, GameState, Player, Suits} from "../types/GameState";
 
 describe("test", () => {
     it("server never ", () => {
@@ -14,7 +14,7 @@ describe("test", () => {
                 big_blind: 1,
                 orbits: 1,
                 dealer: 1,
-                community_cards: [],
+                community_cards: [{rank: "2", suit: Suits.CLUBS}],
                 current_buy_in: 1,
                 pot: 1,
                 in_action: 1,
@@ -23,6 +23,6 @@ describe("test", () => {
             };
         new PlayerService().betRequest({...mockGameState, minimum_raise: minRaise}, betCallback);
         expect(betCallback).toHaveBeenCalledTimes(1)
-        expect(betCallback).toHaveBeenCalledWith(minRaise)
+        expect(betCallback).toHaveBeenCalledWith(minRaise + 2)
     });
 })
