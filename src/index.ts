@@ -1,12 +1,12 @@
 /// <reference path='../typings/index.d.ts'/>
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import { Player } from './Player';
+import {PlayerService} from './PlayerService';
 
 const VERSION = "Default TypeScript folding player";
 
 const app = express();
-const player = new Player();
+const player = new PlayerService();
 
 
 app.use(bodyParser.json());
